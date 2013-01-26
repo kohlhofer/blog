@@ -1,0 +1,19 @@
+<ul class="navList">
+  <li ng-class="{active: !currentTopic}">
+    <a href="#/">All Post ({{postCount()}})</a>
+  </li>
+  <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
+    <a href="#/by-topic/{{id}}">{{topic.label}} ({{postCount(id)}})</a>
+  </li>
+</ul>
+
+<label for"search">Search</label>
+<input typw="text" id="search" ng-model="searchString" />
+
+<ul class="postList">
+  <li ng-repeat="post in posts | filter:{topic:currentTopic,title:searchString} | orderBy:'timestamp':'false'">
+    <h2><a href="#/post/{{post.id}}">{{post.title}}</a></h2>
+    <p class="byLine">{{post.timestamp | date:'fullDate'}} in <a href="#/by-topic/{{post.topic}}">{{topics[post.topic].label}}</a></p>
+
+  </li>
+</ul>
