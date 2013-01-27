@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('blogApp', ['blogApp.directives']).
+angular.module('blogApp', ['blogApp.directives','blogApp.services']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'postsController'});
     $routeProvider.when('/by-topic/:currentTopic', {templateUrl: 'partials/index.html', controller: 'postsController'});

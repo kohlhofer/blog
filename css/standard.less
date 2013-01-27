@@ -1,6 +1,8 @@
 body {
   font-family: 'Droid Serif', serif;
   line-height: 1.5em;
+  padding:0px;
+  margin:0px;
 }
 
 a {
@@ -12,39 +14,50 @@ ul {
     list-style: none;
     margin:0px;
     padding:0px;
+    li {
+      &.active {
+        font-weight: bold;
+      }
+    }
   }
   &.postList {
     text-align: center;
     list-style: none;
     margin:0px;
     padding:0px;
-    h2 {
+    li {
+      border-top: 1px dashed #999;
+      padding:1em 0px;
+      margin-bottom: 10px;
+    }
+    h1 {
       margin:1.5em 0 0.7em 0;
-      font-size: 2.5em;
+      font-size: 1.8em;
       font-family: 'Libre Baskerville', serif;
       a {
         text-decoration: none;
         color:#000;
+        &:hover {
+          color:#36D;
+        }
       }
     }
+
   }
 }
 
-h1 {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2.5em;
-  margin:0 0 1.5em 0;
-  text-align: center;
+.postContent {
+  text-align: left;
+  width:80%;
+  max-width:700px;
+  margin:0 auto 4em auto;
 }
 
 .byLine {
   font-family: 'Montserrat', sans-serif;
+  font-family: 'Droid Serif', serif;
   color:#999;
-  font-size: 1.1em;
+  font-size: 1em;
   text-align: center;
   margin:0 0 1.5em 0;
-}
-
-li.active {
-  font-weight: bold;
 }

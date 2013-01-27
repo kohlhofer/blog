@@ -1,4 +1,4 @@
-[
+angular.callbacks._0({"posts":[
   {
     "id":5,
     "title":"Roses are red",
@@ -35,4 +35,4 @@
     "timestamp":1359184288000,
     "topic":"worldview"
   }
-]
+]})
