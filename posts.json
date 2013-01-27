@@ -1,4 +1,4 @@
-angular.callbacks._0({"posts":[
+[
   {
     "id":5,
     "title":"Roses are red",
@@ -7,7 +7,7 @@ angular.callbacks._0({"posts":[
   },
   {
     "id":4,
-    "title":"THere is a great many Posts out there",
+    "title":"There are a great many Posts out there",
     "timestamp":432432423433,
     "topic":"work"
   },
@@ -15,7 +15,7 @@ angular.callbacks._0({"posts":[
     "id":3,
     "title":"Quarter Spiral Rocks",
     "timestamp":4324324243124,
-    "topic":"family"
+    "topic":"work"
   },
   {
     "id":2,
@@ -27,7 +27,7 @@ angular.callbacks._0({"posts":[
     "id":1,
     "title":"Why write yet another CMS???",
     "timestamp":4324243224,
-    "topic":"worldview"
+    "topic":"humour"
   },
   {
     "id":0,
@@ -35,4 +35,4 @@ angular.callbacks._0({"posts":[
     "timestamp":1359184288000,
     "topic":"worldview"
   }
-]})
+]

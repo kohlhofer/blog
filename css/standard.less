@@ -1,22 +1,43 @@
 body {
-  font-family: 'Droid Serif', serif;
+  //font-family: 'Droid Serif', serif;
+  //font-family: 'Montserrat', sans-serif;
+  //font-family: 'Droid Serif', serif;
+  //font-family: 'Libre Baskerville', serif;
   line-height: 1.5em;
-  padding:0px;
-  margin:0px;
+  padding:0;
+  margin:0;
 }
 
 a {
-  color:#36D;
+  color:#39E;
+  &:hover {
+    color:#06D;
+  }
 }
 
 ul {
   &.navList {
     list-style: none;
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:1em 0 0.5em 0;
+    text-align: center;
+    background-color: #39E;
     li {
+      display: inline-block;
+      margin:0;
+      padding:0;
+      text-align: left;
       &.active {
-        font-weight: bold;
+        a {
+          color: #FFF;
+        }
+      }
+      a {
+        display:block;
+        padding:0.5em 1em;
+        font-family: 'Droid Serif', serif;
+        text-decoration: none;
+        color:rgba(255,255,255,0.7);
       }
     }
   }
@@ -26,19 +47,25 @@ ul {
     margin:0px;
     padding:0px;
     li {
-      border-top: 1px dashed #999;
-      padding:1em 0px;
-      margin-bottom: 10px;
+      padding:1.5em 0 2.5em 0;
+      border-bottom: 1px solid #DDD;
+      &.even {
+        //background-color: #EEF;
+      }
+      &.odd {
+        
+      }
     }
     h1 {
-      margin:1.5em 0 0.7em 0;
-      font-size: 1.8em;
+      margin:0.3em 0;
+      font-size: 1.6em;
       font-family: 'Libre Baskerville', serif;
+      line-height: 1.5em;
+      padding:0px 20px;
       a {
         text-decoration: none;
-        color:#000;
         &:hover {
-          color:#36D;
+    
         }
       }
     }
@@ -48,16 +75,42 @@ ul {
 
 .postContent {
   text-align: left;
-  width:80%;
-  max-width:700px;
+  width:90%;
+  max-width:800px;
   margin:0 auto 4em auto;
+  padding:0px 20px;
 }
 
-.byLine {
+.date {
+  color:#333;
+  font-size: 1.1em;
+  font-family: 'Lato', sans-serif;
+  margin:0.5em 0 2em 0;
+}
+
+.topic {
   font-family: 'Montserrat', sans-serif;
-  font-family: 'Droid Serif', serif;
-  color:#999;
-  font-size: 1em;
+  font-size: 0.9em;
+  margin:0 0 2em 0;
+  text-transform: uppercase;
+  a {
+    text-decoration:none;
+      border-bottom:2px solid #DDD;
+    color:#666;
+    &:hover {
+      color:#333;
+    }
+  }
+}
+
+blockquote {
+  border-left: 3px solid #999;
+  margin-left: 1.5em;
+  padding-left:1em;
+}
+
+#search {
+  background-color:#EEE;
+  padding:1em;
   text-align: center;
-  margin:0 0 1.5em 0;
 }

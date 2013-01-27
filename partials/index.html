@@ -1,19 +1,25 @@
 <ul class="navList">
   <li ng-class="{active: !currentTopic}">
-    <a ng-click="selectTopic('');">All Post ({{postCount()}})</a>
+    <a ng-click="selectTopic('');">All</a>
   </li>
   <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
-    <a ng-click="selectTopic(id);">{{topic.label}} ({{postCount(id)}})</a>
+    <a ng-click="selectTopic(id);">{{topic.label}}</a>
   </li>
 </ul>
 
-<label for"search">Search</label>
-<input typw="text" id="search" ng-model="searchString" />
+<div id="search">
+
+  <label for"searchField">Search {{postCount(currentTopic)}} Posts <span ng-show="currentTopic">in {{topics[currentTopic].label}}</span></label>
+  <input typw="text" id="searchField" ng-model="searchString" />
+</div>
 
 <ul class="postList">
-  <li ng-repeat="post in posts.posts | filter:{topic:currentTopic,$:searchString} | orderBy:'timestamp':'false'">
+  <li ng-repeat="post in posts | filter:{topic:currentTopic,$:searchString} | orderBy:'timestamp':'true'" ng-class-odd="'odd'" ng-class-even="'even'">
+    <p class="topic"><a ng-click="selectTopic(post.topic);">{{topics[post.topic].label}}</a></p>
     <h1><a ng-click="loadPostContent(post.id)">{{post.title}}</a></h1>
-    <p class="byLine">{{post.timestamp | date:'fullDate'}} in <a ng-click="selectTopic(post.topic);">{{topics[post.topic].label}}</a></p>
+    <p class="date">{{post.timestamp | date:'fullDate'}}</p>
+    
     <div ng-bind-html-unsafe="post.postContent" class="postContent" ng-show="post.postContent"></div>
+    <a ng-click="post.postContent = false;" ng-show="post.postContent" class="close">Close</a>
   </li>
 </ul>

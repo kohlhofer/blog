@@ -2,7 +2,7 @@
 
 
 
-function postsController($scope,$routeParams,posts,$http,$location) {
+function postsController($scope,$routeParams,$http,$location) {
 
   var converter = new Showdown.converter();
 
@@ -10,7 +10,9 @@ function postsController($scope,$routeParams,posts,$http,$location) {
     return converter.makeHtml(source);
   }
 
-  $scope.posts = posts.getAll();
+  $http.get('/posts.json').then(function(res){
+      $scope.posts = res.data;
+    });
 
   if ($routeParams.postId) {
     /*
@@ -24,12 +26,25 @@ function postsController($scope,$routeParams,posts,$http,$location) {
 
   $scope.loadPostContent = function (postId) {
     $http.get('/posts/'+postId+'.txt').then(function(res){
-      for (var i = 0; i < $scope.posts.posts.length; i++) {
-        if ($scope.posts.posts[i].id == postId) {
-          $scope.posts.posts[i].postContent = $scope.convertMarkDown(res.data); 
+      for (var i = 0; i < $scope.posts.length; i++) {
+        if ($scope.posts[i].id == postId) {
+          $scope.posts[i].postContent = $scope.convertMarkDown(res.data); 
         }
       }        
     });
+  }
+
+  $scope.randomColor = function () {
+      // colors
+      var colors = [
+        '#5E412F',
+        '#F9CC36',
+        '#78C0A8',
+        '#F07818',
+        '#F0A830',
+        '#C7E0D0',
+      ];
+      return colors[Math.floor(Math.random()*colors.length)];
   }
   
   $scope.searchString = "";
@@ -51,11 +66,7 @@ function postsController($scope,$routeParams,posts,$http,$location) {
       description:""
     },
     "work":{
-      label:"Work",
-      description:""
-    },
-    "family":{
-      label:"Family & Life",
+      label:"Working & Learning",
       description:""
     },
     "inspiration":{
@@ -63,7 +74,7 @@ function postsController($scope,$routeParams,posts,$http,$location) {
       description:""
     },
     "humour":{
-      label:"Humour",
+      label:"The Funnies",
       description:"That which amuses me."
     },
     "remarkable":{
@@ -78,11 +89,11 @@ function postsController($scope,$routeParams,posts,$http,$location) {
 
   $scope.postCount = function (topic) {
     if (!topic) {
-      return $scope.posts.posts.length;
+      return $scope.posts.length;
     } else {
       var result = 0;
-      for (var i = 0; i < $scope.posts.posts.length; i++) {
-        if ($scope.posts.posts[i].topic == topic) {
+      for (var i = 0; i < $scope.posts.length; i++) {
+        if ($scope.posts[i].topic == topic) {
           result++
         }
       }
