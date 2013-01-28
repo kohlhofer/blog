@@ -15,7 +15,8 @@
     "id":3,
     "title":"Quarter Spiral Rocks",
     "timestamp":4324324243124,
-    "topic":"work"
+    "topic":"work",
+    "draft":true
   },
   {
     "id":2,
