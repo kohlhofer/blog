@@ -4,7 +4,7 @@ Such a robot can transcend the limitations of on board processing power by using
 
 It is rather obvious once you think about it but I hadn't–until now.
 
-The talk gets rather technical fast but what struck me is already presented in the introduction:
+The talk is rather technical but the introduction is not:
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/FxXBUp-4800" frameborder="0" allowfullscreen></iframe>
 
