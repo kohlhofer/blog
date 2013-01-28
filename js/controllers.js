@@ -18,7 +18,7 @@ function postsController($scope,$routeParams,$http,$location,postService) {
 
 
   $scope.loadPostContent = function (postId) {
-    $http.get('/posts/'+postId+'.txt').then(function(res){
+    $http.get('posts/'+postId+'.txt').then(function(res){
       for (var i = 0; i < $scope.posts.length; i++) {
         if ($scope.posts[i].id == postId) {
           $scope.posts[i].postContent = $scope.convertMarkDown(res.data); 
@@ -48,7 +48,7 @@ function postsController($scope,$routeParams,$http,$location,postService) {
 
   // check if posts have previously been loaded and get them if not
   if (!$scope.posts) {
-    $http.get('/posts.json').then(function(res){
+    $http.get('posts.json').then(function(res){
       $scope.posts = res.data;
       postService.storePosts($scope.posts);
       $scope.loadSinglePost();
