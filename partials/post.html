@@ -1,8 +1,3 @@
 <a href="#/">Home</a>
 
-<p class="byLine">
-  {{singlePost.timestamp | date:'fullDate'}} in <a href="#/by-topic/{{singlePost.topic}}">{{topics[singlePost.topic].label}}</a>
-</p>
-
-<div ng-include src="'/posts/'+singlePost.id+'.html'"></div>
-
+<ng-include src="'postTemplate'" ng-init="permalink = true"></ng-include> 

@@ -2,7 +2,6 @@
 <html ng-app="blogApp">
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-resource.min.js"></script>
     <link rel="stylesheet/less" type="text/css" href="css/standard.less" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Montserrat:400,700|Libre+Baskerville:400,700|Lato:300' rel='stylesheet' type='text/css'>
 
@@ -18,5 +17,21 @@
     <script src="js/services.js"></script>
     <script src="js/libs/less.js" type="text/javascript"></script>
     <script src="js/libs/showdown.js"></script>
+
+    <script type='text/ng-template' id="postTemplate">
+      <div class="post">
+        <p class="topic"><a ng-click="selectTopic(post.topic);">{{topics[post.topic].label}}</a></p>
+        <h1><a ng-click="loadPostContent(post.id)">{{post.title}}</a></h1>
+        <p class="date">
+          {{post.timestamp | date:'fullDate'}}
+          <a ng-click="loadPostContent(post.id)" ng-show="!post.postContent && !permalink">+</a>
+          <a ng-click="post.postContent = false;" ng-show="post.postContent && !permalink">-</a>
+          <a href="/#/post/{{post.id}}">&infin;</a></p>
+        
+        <div ng-bind-html-unsafe="post.postContent" class="postContent" ng-show="post.postContent"></div>
+        <a ng-click="post.postContent = false;" ng-show="post.postContent && !permalink" class="close">Close</a>
+      </div>
+    </script> 
+
   </body>
 </html>

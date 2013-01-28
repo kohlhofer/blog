@@ -2,27 +2,18 @@
 
 
 
-function postsController($scope,$routeParams,$http,$location) {
+function postsController($scope,$routeParams,$http,$location,postService) {
 
-  var converter = new Showdown.converter();
+  var markDownConverter = new Showdown.converter();
 
   $scope.convertMarkDown = function(source) {
-    return converter.makeHtml(source);
+    return markDownConverter.makeHtml(source);
   }
 
-  $http.get('/posts.json').then(function(res){
-      $scope.posts = res.data;
-    });
 
-  if ($routeParams.postId) {
-    /*
-    for (var i = 0; i < $scope.posts.posts.length; i++) {
-      if ($scope.posts.posts[i].id == $routeParams.postId) {
-        $scope.singlePost = $scope.posts.posts[i];
-      }
-    }
-    */
-  }
+  //initialize search string aka filter
+  $scope.searchString = "";
+
 
   $scope.loadPostContent = function (postId) {
     $http.get('/posts/'+postId+'.txt').then(function(res){
@@ -30,9 +21,41 @@ function postsController($scope,$routeParams,$http,$location) {
         if ($scope.posts[i].id == postId) {
           $scope.posts[i].postContent = $scope.convertMarkDown(res.data); 
         }
-      }        
+      }       
     });
   }
+
+  //prepares a single Post IF one is requested as per URL
+  $scope.loadSinglePost = function () {
+    if ($routeParams.postId) {
+      for (var i = 0; i < $scope.posts.length; i++) {
+        if ($scope.posts[i].id == $routeParams.postId) {
+          //loads the post content if not previously loaded
+          if (!$scope.posts[i].postContent) {
+            $scope.loadPostContent($routeParams.postId);
+          }
+          $scope.post = $scope.posts[i]; 
+        }
+      }
+    }
+  }
+
+  //gets the post from the service
+  $scope.posts = postService.loadPosts();
+  
+
+  // check if posts have previously been loaded and get them if not
+  if (!$scope.posts) {
+    $http.get('/posts.json').then(function(res){
+      $scope.posts = res.data;
+      postService.storePosts($scope.posts);
+      $scope.loadSinglePost();
+    });
+  } else {
+    $scope.loadSinglePost();
+  }
+
+
 
   $scope.randomColor = function () {
       // colors
@@ -47,7 +70,7 @@ function postsController($scope,$routeParams,$http,$location) {
       return colors[Math.floor(Math.random()*colors.length)];
   }
   
-  $scope.searchString = "";
+ 
   
   if ($routeParams.currentTopic) {
     $scope.currentTopic = $routeParams.currentTopic;
@@ -57,7 +80,11 @@ function postsController($scope,$routeParams,$http,$location) {
 
   $scope.selectTopic = function (topic) {
     $scope.currentTopic = topic;
-    //$location.url('test');
+    if (topic != "") {
+      $location.url('topic/'+topic);
+    } else {
+      $location.url('/');
+    }
   }
 
   $scope.topics = {
