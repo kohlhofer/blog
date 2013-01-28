@@ -1,3 +1,8 @@
+@import "elements.less";
+
+@linksColor: #39E;
+@linksHoverColor: #06D;
+
 body {
   //font-family: 'Droid Serif', serif;
   //font-family: 'Montserrat', sans-serif;
@@ -9,9 +14,9 @@ body {
 }
 
 a {
-  color:#39E;
+  color:@linksColor;
   &:hover {
-    color:#06D;
+    color:#linksHoverColor;
   }
 }
 
@@ -34,10 +39,10 @@ ul {
       }
       a {
         display:block;
-        padding:0.5em 1em;
+        padding:0.5em;
         font-family: 'Droid Serif', serif;
         text-decoration: none;
-        color:rgba(255,255,255,0.7);
+        color:rgba(255,255,255,0.5);
       }
     }
   }
@@ -79,6 +84,7 @@ ul {
     max-width:800px;
     margin:0 auto 4em auto;
     padding:0px 20px;
+    font-size: 1.1em;
   }
   .date {
     color:#333;
@@ -120,4 +126,33 @@ blockquote {
     font-size: 0.7em;
     padding:5px;
   }
+}
+
+.options {
+  a.toggle {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    padding:0 15px;
+    text-decoration: none;
+    border:1px solid #DDD;
+    height:30px;
+    font-size: 0.9em;
+    line-height: 30px;
+    color:@linksColor;
+    .rounded(@radius: 15px);
+    &:hover {
+      background-color: @linksColor;
+      color:#FFF;
+      border-color: @linksColor;
+    }
+  }
+  p.permanent {
+    font-size: 1em;
+    color:#AAA;
+    font-style: italic;
+    a {
+        text-decoration: none;
+      }
+  }
+  
 }

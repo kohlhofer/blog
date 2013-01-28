@@ -21,15 +21,21 @@
     <script type='text/ng-template' id="postTemplate">
       <div class="post">
         <p class="topic"><a ng-click="selectTopic(post.topic);">{{topics[post.topic].label}}</a></p>
-        <h1><a ng-click="loadPostContent(post.id)">{{post.title}}</a></h1>
+        <h1>{{post.title}}</h1>
         <p class="date">
           {{post.timestamp | date:'fullDate'}}
-          <a ng-click="loadPostContent(post.id)" ng-show="!post.postContent && !permalink">+</a>
-          <a ng-click="post.postContent = false;" ng-show="post.postContent && !permalink">-</a>
-          <a href="/#/post/{{post.id}}">&infin;</a></p>
+        </p>
         
         <div ng-bind-html-unsafe="post.postContent" class="postContent" ng-show="post.postContent"></div>
-        <a ng-click="post.postContent = false;" ng-show="post.postContent && !permalink" class="close">Close</a>
+        <div class="options">
+          <p ng-show="post.postContent && !permalink" class="permanent">
+            Permanent URL for this post: <a href="/#/post/{{post.id}}">http://{{host}}/#/post/{{post.id}}</a>
+          </p>
+          <p>
+            <a ng-click="loadPostContent(post.id)" ng-show="!post.postContent && !permalink" class="toggle">Read</a>
+            <a ng-click="post.postContent = false;" ng-show="post.postContent && !permalink" class="toggle">Close</a>
+          </p>
+        </div>
       </div>
     </script> 
 

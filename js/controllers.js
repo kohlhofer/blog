@@ -6,6 +6,8 @@ function postsController($scope,$routeParams,$http,$location,postService) {
 
   var markDownConverter = new Showdown.converter();
 
+  $scope.host = $location.host();
+
   $scope.convertMarkDown = function(source) {
     return markDownConverter.makeHtml(source);
   }
@@ -94,6 +96,10 @@ function postsController($scope,$routeParams,$http,$location,postService) {
     },
     "work":{
       label:"Working & Learning",
+      description:""
+    },
+    "reflection":{
+      label:"Reflecting",
       description:""
     },
     "inspiration":{
