@@ -91,30 +91,32 @@ function postsController($scope,$routeParams,$http,$location,postService) {
 
   $scope.topics = {
     "worldview":{
+      sortOrder:2,
       label:"World View",
       description:""
     },
     "work":{
+      sortOrder:3,
       label:"Working & Learning",
       description:""
     },
-    "reflection":{
-      label:"Reflecting",
-      description:""
-    },
     "inspiration":{
+      sortOrder:4,
       label:"Inspiration",
       description:""
     },
     "humour":{
+      sortOrder:5,
       label:"The Funnies",
       description:"That which amuses me."
     },
     "remarkable":{
+      sortOrder:1,
       label:"Remarkable Things",
       description:"That which amuses me."
     },
     "other":{
+      sortOrder:6,
       label:"The Rest",
       description:"That which does not fit in."
     }

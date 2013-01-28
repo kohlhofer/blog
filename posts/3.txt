@@ -1,0 +1,16 @@
+This talk about "cloud robotics" has just radically changed my notion of robots and what they may soon represent. Think of the physical robot as an avatar of a much more powerful/capable connected intelligence in the cloud. One that is not human and not intelligent in the same way but capable of human like feats and interactions. 
+
+Such a robot can transcend the limitations of on board processing power by using the vast knowledge of google for example to identify what it's camera sees, what it is told, etc. If you have used [Google Now][1] it is not hard to imagine the possibilities. 
+
+It is rather obvious once you think about it but I hadn't–until now.
+
+The talk gets rather technical fast but what struck me is already presented in the introduction:
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/FxXBUp-4800" frameborder="0" allowfullscreen></iframe>
+
+via [Ed Burton][2]:
+
+> ...cloud robotics. Why have an expensive power hungry processor when you could keep your head in the clouds instead!
+
+[1]: https://www.google.com/landing/now/
+[2]: https://twitter.com/edburton
