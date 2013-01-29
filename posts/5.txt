@@ -1,0 +1,5 @@
+I spent the evening trying to integrate several 3rd party commenting systems into a single page web application and failed miserably. The lesson: If you want to utilize the huge eco system of page based plugins and tools your app pretty much needs to pretend it is page based. That however requires server shenanigans that I am no longer willing to to do.
+
+I think there is a nice opportunity to create services that are actually compatible with the bright future of rich html/JS clients (search engines, comment systems, etc...)
+
+I for now will just do without comments. We can discuss this elsewhere anyway, right?
