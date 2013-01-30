@@ -35,7 +35,7 @@
 [@kohlhofer][1]:
 > [@paulharter][4] [@red56][2] [@walski][3] That implies that this is automatic. Which it is of course not.
 
-[1]:(https://twitter.com/kohlhofer)
-[2]:(https://twitter.com/red56)
-[3]:(https://twitter.com/walski)
-[4]:(https://twitter.com/paulharter)
+[1]: https://twitter.com/kohlhofer
+[2]: https://twitter.com/red56
+[3]: https://twitter.com/walski
+[4]: https://twitter.com/paulharter
