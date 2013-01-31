@@ -1,3 +1,5 @@
+A Twitter conversation:
+
 [@kohlhofer][1]: 
 > Good morning
 
@@ -5,35 +7,35 @@
 > [@kohlhofer][1] Good morning, even though I'm just replying to a robot (is this some kind of psychological experiment?)
 
 [@walski][3]:
-> [@red56][2] He promised me it's not! /cc @kohlhofer
+> He promised me it's not!
 
 [@kohlhofer][1]:
-> [@walski][3] [@red56][2] I am just trying to brighten everybody's day–every day!
+> I am just trying to brighten everybody's day–every day!
 
 [@red56][2]:
-> [@kohlhofer][1] [@walski][3] I need to know that there's a human behind for my day to be brightened 
+> I need to know that there's a human behind for my day to be brightened 
 [http://en.wikipedia.org/wiki/Chinese\_r...](http://en.wikipedia.org/wiki/Chinese_room) [http://en.wikipedia.org/wiki/Turing\_te...](http://en.wikipedia.org/wiki/Turing_test)
 
 [@kohlhofer][1]:
-> [@red56][2] [@walski][3] Well there is me  :)
+> Well there is me  :)
 
 [@red56][2]: 
-> [@kohlhofer][1] [@walski][3] only if your intention is behind each tweet!
+> only if your intention is behind each tweet!
 
 [@red56][2]: 
-> [@kohlhofer][1] [@walski][3] hmm, though... is programming a tweetbot different from being socially conditioned (self-programmed) to say good morning
+> hmm, though... is programming a tweetbot different from being socially conditioned (self-programmed) to say good morning
 
 [@walski][3]:
->[@red56][2] [@kohlhofer][1] I'm signing out, that is getting too philosophical wayyy to quickly ;)
+> I'm signing out, that is getting too philosophical wayyy to quickly ;)
 
 [@paulharter][4]:
-> [@red56][2] [@kohlhofer][1] admirable consistency
+> admirable consistency
 
 [@paulharter][4]:
-> [@red56][2] [@kohlhofer][1] [@walski][3] maybe A could send himself a monthly opt-out to top up intention?
+> maybe A could send himself a monthly opt-out to top up intention?
 
 [@kohlhofer][1]:
-> [@paulharter][4] [@red56][2] [@walski][3] That implies that this is automatic. Which it is of course not.
+> That implies that this is automatic. Which it is of course not.
 
 [1]: https://twitter.com/kohlhofer
 [2]: https://twitter.com/red56

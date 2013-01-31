@@ -1,21 +1,36 @@
-
-
-<ul class="navList">
-  <li ng-class="{active: !currentTopic}">
-    <a ng-click="selectTopic('');">All</a>
-  </li>
-  <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
-    <a ng-click="selectTopic(id);">{{topic.label}}</a>
-  </li>
-</ul>
-
-<div id="mastHead">
-  {{postCount(currentTopic)}} Posts<span ng-show="currentTopic"> in {{topics[currentTopic].label}}</span>.
-  <input typw="text" id="searchField" ng-model="searchString" placeholder="Search..." />
+<div class="container-fluid header-bar">
+  <div class="row-fluid">
+    <div class="span12">
+      <ul class="navList unstyled">
+        <li ng-class="{active: !currentTopic}">
+          <a ng-click="selectTopic('');">All</a>
+        </li>
+        <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
+          <a ng-click="selectTopic(id);">{{topic.label}}</a>
+        </li>
+      </ul>
+      <div id="mastHead">
+        {{postCount(currentTopic)}} Posts<span ng-show="currentTopic"> in {{topics[currentTopic].label}}</span>.
+        <form class="form">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-search"></i></span>
+            <input type="text" id="inputIcon" ng-model="searchString" placeholder="Search..." />
+          </div>
+        </form>  
+      </div>
+    </div>
+  </div>
 </div>
 
-<ul class="postList">
-  <li ng-repeat="post in posts | filter:{topic:currentTopic,$:searchString} | orderBy:'timestamp':'true'" ng-class-odd="'odd'" ng-class-even="'even'" ng-hide="post.draft">
-    <ng-include src="'postTemplate'"></ng-include>  
-  </li>
-</ul>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <ul class="postList unstyled">
+        <li ng-repeat="post in posts | filter:{topic:currentTopic,$:searchString} | orderBy:'timestamp':'true'" ng-class-odd="'odd'" ng-class-even="'even'" ng-hide="post.draft">
+          <ng-include src="'postTemplate'"></ng-include>  
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,7 +1,14 @@
 @import "elements.less";
+@import "bootstrap.min.css";
+@import "bootstrap-responsive.min.css";
 
 @linksColor: #39E;
 @linksHoverColor: #06D;
+
+
+.header-bar {
+  background-color:#39E;
+}
 
 body {
   //font-family: 'Droid Serif', serif;
@@ -22,13 +29,10 @@ a {
 
 ul {
   &.navList {
-    list-style: none;
-    margin:0;
-    padding:100px 0 0.5em 0;
     text-align: center;
     background-color: #39E;
+    margin:0;
     li {
-      display: inline-block;
       margin:0;
       padding:0;
       text-align: left;
@@ -47,13 +51,14 @@ ul {
     }
   }
   &.postList {
-    list-style: none;
-    margin:0px;
-    padding:0px;
-    li {
+    margin:0;
+    > li {
+      width:80%;
+      max-width:900px;
+      margin:0 auto;
       padding:1em 0 2.5em 0;
       &.even {
-        background-color: #FCFBF9;
+        //background-color: #FCFBF9;
       }
       &.odd {
         
@@ -79,11 +84,8 @@ ul {
   }
   .postContent {
     text-align: left;
-    width:90%;
-    max-width:800px;
-    margin:0 auto 4em auto;
     padding:0px 20px;
-    font-size: 1.1em;
+    margin-bottom:2em;
   }
   .date {
     color:#333;
@@ -108,26 +110,20 @@ ul {
 }
 
 
-blockquote {
-  border-left: 3px solid #999;
-  margin-left: 1.5em;
-  padding-left:1em;
-}
 
 #mastHead {
   background-color:#EEE;
-  font-family: 'Libre Baskerville', serif;
-  font-size: 0.9em;
   color:#666;
   padding:10px 1em;
   text-align: center;
-  input {
-    font-size: 0.7em;
-    padding:5px;
-  }
 }
 
-.options {
+ul.options {
+  margin-bottom: 3em;
+  li {
+    display: inline;
+    padding: 0 10px;
+  }
   a.toggle {
     font-family: 'Montserrat', sans-serif;
     display: inline-block;
@@ -146,7 +142,7 @@ blockquote {
       border-color: @linksColor;
     }
   }
-  p.permanent {
+  li.permanent {
     font-size: 1em;
     color:#AAA;
     font-style: italic;

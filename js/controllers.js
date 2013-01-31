@@ -4,6 +4,11 @@
 
 function postsController($scope,$routeParams,$http,$location,postService) {
 
+
+  $scope.goBack = function () {
+    window.history.back()
+  }
+
   var markDownConverter = new Showdown.converter();
 
   $scope.host = $location.host();
@@ -87,6 +92,10 @@ function postsController($scope,$routeParams,$http,$location,postService) {
     } else {
       $location.url('/');
     }
+  }
+
+  $scope.openPermanentUrl = function (id) {
+    $location.url('post/'+id);
   }
 
   $scope.topics = {
