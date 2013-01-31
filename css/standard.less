@@ -6,14 +6,12 @@
 @linksHoverColor: #06D;
 
 body {
-  //font-family: 'Droid Serif', serif;
   //font-family: 'Montserrat', sans-serif;
   //font-family: 'Droid Serif', serif;
   //font-family: 'Libre Baskerville', serif;
   line-height: 1.5em;
   padding:0;
   margin:0;
-  padding-top: 40px;
 }
 
 a {
@@ -23,13 +21,23 @@ a {
   }
 }
 
+#brandHeader {
+  background-color:@linksColor;
+  .appName {
+    height:200px;
+    line-height: 100px;
+    display: block;
+    width:100%;
+    font-size: 180px;
+    text-indent: -70px;
+    font-family: 'Libre Baskerville', serif;
+  }
+}
+
 ul {
   &.postList {
-    margin:0;
+    margin:30px 0 0 0;
     > li {
-      width:80%;
-      max-width:900px;
-      margin:0 auto;
       padding:1em 0 2.5em 0;
       &.even {
         //background-color: #FCFBF9;
@@ -43,6 +51,8 @@ ul {
 
 .post {
   text-align: center;
+  max-width:900px;
+  margin:0 auto;
   h1 {
     margin:0.3em 0;
     font-size: 1.6em;
@@ -60,6 +70,7 @@ ul {
     text-align: left;
     padding:0px 20px;
     margin-bottom:2em;
+    font-family: 'Droid Serif', serif;
   }
   .date {
     color:#333;
@@ -85,11 +96,50 @@ ul {
 
 
 
-#mastHead {
-  background-color:#EEE;
+#topBar {
+  background-color:@linksColor;
   color:#666;
-  padding:1em 1em;
+  width:100%;
+  margin-top: -40px;
+  &.affix {
+    top:0px;
+    margin-top: 0px;
+    .box-shadow(0px 4px 0px rgba(0,0,0,0.1));
+  }
+  #search {
+    margin-top: 5px;
+  }
+  ul {
+    margin:0;
+    li {
+      display: inline-block;
+      margin-right: 15px;
+      line-height:40px;
+      font-family: 'Montserrat', sans-serif;
+      color:rgba(255,255,200,1);
+      a {
+        display: block;
+        color:rgba(255,255,255,0.5);
+        &:hover {
+          color:rgba(255,255,255,0.8);
+          text-decoration: none;
+        }
+      }
+      &.active {
+        a {
+          color:rgba(255,255,255,1);
+        }
+      }
+    }
+  }
+}
+
+#mastHead {
+  padding:0.5em 0;
+  font-family: 'Lato', sans-serif;
+  color:#999;
   text-align: center;
+  display: none;
 }
 
 ul.options {

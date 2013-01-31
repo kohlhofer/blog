@@ -1,52 +1,44 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
- 
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      
-      <form class="navbar-form pull-right">
-        <div class="input-prepend">
-          <span class="add-on"><i class="icon-search"></i></span>
-          <input type="text" id="inputIcon" ng-model="searchString" placeholder="Search..." />
-        </div>
-      </form>
+<div id="topBar">
+  <div class="container-fluid">
+    <div class="row-fluid">
 
+      <div class="span12">
 
-      <!-- Everything you want hidden at 940px or less, place within here -->
-      <div class="nav-collapse collapse">
-        <!-- .nav, .navbar-search, .navbar-form, etc -->
-        <ul class="nav">
+        <ul class="unstyled pull-left">
+          <li>
+            Topics:
+          </li>
           <li ng-class="{active: !currentTopic}">
             <a ng-click="selectTopic('');">All</a>
           </li>
           <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
-              <a ng-click="selectTopic(id);">{{topic.label}}</a>
-            </li>
+            <a ng-click="selectTopic(id);">{{topic.label}}</a>
+          </li>
         </ul>
-      </div>
- 
-    </div>
-  </div>
-</div>
 
-<div class="container-fluid header-bar">
-  <div class="row-fluid">
-    <div class="span12">
-      <div id="mastHead">
-        {{postCount(currentTopic)}} Posts<span ng-show="currentTopic"> in {{topics[currentTopic].label}}</span>.
+        <div id="search" class="input-prepend pull-right">
+          <span class="add-on"><i class="icon-search"></i></span>
+          <input type="text" id="inputIcon" ng-model="searchString" placeholder="Search..." />
+        </div>
+
       </div>
+
     </div>
   </div>
 </div>
 
 <div class="container-fluid">
   <div class="row-fluid">
+
+
+
     <div class="span12">
+
+      <div id="mastHead">
+         <span ng-show="currentTopic">Current Topic: {{topics[currentTopic].label}}, </span>Posts: {{postCount(currentTopic)}}
+      </div>
+      
+
       <ul class="postList unstyled">
         <li ng-repeat="post in posts | filter:{topic:currentTopic,$:searchString} | orderBy:'timestamp':'true'" ng-class-odd="'odd'" ng-class-even="'even'" ng-hide="post.draft">
           <ng-include src="'postTemplate'"></ng-include>  

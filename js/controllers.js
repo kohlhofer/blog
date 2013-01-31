@@ -9,6 +9,12 @@ function postsController($scope,$routeParams,$http,$location,postService) {
     window.history.back()
   }
 
+  $scope.bootstrapAffix = function () {
+    $('#topBar').affix({offset:160});
+  }
+
+  $scope.bootstrapAffix();
+
   var markDownConverter = new Showdown.converter();
 
   $scope.host = $location.host();
@@ -92,7 +98,10 @@ function postsController($scope,$routeParams,$http,$location,postService) {
     } else {
       $location.url('/');
     }
+    
   }
+
+
 
   $scope.openPermanentUrl = function (id) {
     $location.url('post/'+id);
