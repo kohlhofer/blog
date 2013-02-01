@@ -4,13 +4,18 @@
 
 function postsController($scope,$routeParams,$http,$location,postService) {
 
+  var windowWidth = $(window).width();
 
   $scope.goBack = function () {
     window.history.back()
   }
 
   $scope.bootstrapAffix = function () {
-    $('#topBar').affix({offset:160});
+    //makes navigation sticky if screen is large enough (same as bootstrap min width threshold)
+    if (windowWidth > 767) {
+      $('#topBar').affix({offset:160});
+      $('#sideNav').affix({offset:160});
+    }
   }
 
   $scope.bootstrapAffix();

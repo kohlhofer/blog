@@ -1,38 +1,29 @@
-<div id="topBar">
-  <div class="container-fluid">
-    <div class="row-fluid">
+<div class="container">
+  <div class="row">
 
-      <div class="span12">
+     <div class="span3">
 
-        <ul class="unstyled pull-left">
-          <li>
-            Topics:
-          </li>
-          <li ng-class="{active: !currentTopic}">
-            <a ng-click="selectTopic('');">All</a>
-          </li>
-          <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
-            <a ng-click="selectTopic(id);">{{topic.label}}</a>
-          </li>
-        </ul>
+      
+      <div id="sideNav">
+        <ul id="topics" class="unstyled">
+            <li ng-class="{active: !currentTopic}">
+              <a ng-click="selectTopic('');">All</a>
+            </li>
+            <li ng-repeat="(id,topic) in topics" ng-class="{active: id == currentTopic}">
+              <a ng-click="selectTopic(id);">{{topic.label}}</a>
+            </li>
+          </ul>
 
-        <div id="search" class="input-prepend pull-right">
-          <span class="add-on"><i class="icon-search"></i></span>
-          <input type="text" id="inputIcon" ng-model="searchString" placeholder="Search..." />
+          <div id="search" class="input-prepend">
+            <span class="add-on"><i class="icon-search"></i></span>
+            <input type="text" id="inputIcon" ng-model="searchString" class="span2" placeholder="Search..." />
+          </div>
         </div>
 
-      </div>
 
     </div>
-  </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-
-
-
-    <div class="span12">
+    <div class="span9">
 
       <div id="mastHead">
          <span ng-show="currentTopic">Current Topic: {{topics[currentTopic].label}}, </span>Posts: {{postCount(currentTopic)}}
@@ -46,5 +37,8 @@
       </ul>
 
     </div>
+
+   
+
   </div>
 </div>

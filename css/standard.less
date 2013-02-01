@@ -12,6 +12,7 @@ body {
   line-height: 1.5em;
   padding:0;
   margin:0;
+  background-color: #EEE
 }
 
 a {
@@ -38,12 +39,11 @@ ul {
   &.postList {
     margin:30px 0 0 0;
     > li {
-      padding:1em 0 2.5em 0;
+      padding:0 10px;
+      margin-bottom: 30px;
       &.even {
-        //background-color: #FCFBF9;
       }
       &.odd {
-        
       }
     }
   }
@@ -51,8 +51,12 @@ ul {
 
 .post {
   text-align: center;
-  max-width:900px;
-  margin:0 auto;
+  //max-width:900px;
+  //margin:0 auto;
+  padding:1em;
+  .box-shadow(0px 0px 2px rgba(0,0,0,0.3));
+  .rounded(@radius: 3px);
+  background-color: #FFF;
   h1 {
     margin:0.3em 0;
     font-size: 1.6em;
@@ -95,22 +99,47 @@ ul {
 }
 
 
+#sideNav {
+  padding:0 10px;
+  &.affix {
+    top:50px;
+  } 
+}
+
+#topics {
+  margin-top: 30px;
+
+  li {
+    border-top: 1px solid #DDD;
+    a {
+      display: block;
+      padding:5px 0px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    &.active {
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 
 #topBar {
   background-color:@linksColor;
   color:#666;
   width:100%;
   margin-top: -40px;
+  text-align: left;
   &.affix {
     top:0px;
     margin-top: 0px;
+    border-bottom:1px solid #666;
     .box-shadow(0px 4px 0px rgba(0,0,0,0.1));
   }
-  #search {
-    margin-top: 5px;
-  }
   ul {
-    margin:0;
+    margin:0 auto;
+    padding:0 10px;
     li {
       display: inline-block;
       margin-right: 15px;
@@ -143,7 +172,7 @@ ul {
 }
 
 ul.options {
-  margin-bottom: 3em;
+  margin: 3em 0 1em 0;
   li {
     display: inline;
     padding: 0 10px;
