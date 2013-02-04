@@ -7,5 +7,7 @@ angular.module('blogApp', ['blogApp.directives','blogApp.services']).
     $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'postsController'});
     $routeProvider.when('/topic/:currentTopic', {templateUrl: 'partials/index.html', controller: 'postsController'});
     $routeProvider.when('/post/:postId', {templateUrl: 'partials/post.html', controller: 'postsController'});
+    $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'staticController'});
+    $routeProvider.when('/contact', {templateUrl: 'partials/contact.html', controller: 'staticController'});
     $routeProvider.otherwise({redirectTo:'/'});
   }]);

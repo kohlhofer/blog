@@ -23,21 +23,21 @@
       </div>
     </div>
 
-    <div id="topBar">
+    <div id="topBar" ng-controller="navigationController">
       <div class="container">
         <div class="row">
 
           <div class="span12">
 
             <ul class="unstyled">
-              <li class="active">
+              <li class="{{currentSection('blog');}}">
                 <a href="#/">Blog</a>
               </li>
-              <li>
-                <a ng-click="selectTopic('');">About</a>
+              <li class="{{currentSection('about');}}">
+                <a href="#/about">About</a>
               </li>
-              <li>
-                <a ng-click="selectTopic('');">Contact</a>
+              <li class="{{currentSection('contact');}}">
+                <a href="#/contact">Contact</a>
               </li>
             </ul>
 

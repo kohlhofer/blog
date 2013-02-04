@@ -1,6 +1,30 @@
 //-----------------------------------------------------------
 
 
+function staticController($scope,$routeParams,$location) {
+
+}
+
+function navigationController($scope,$location) {
+
+  $scope.currentSection = function (section) {
+    var locationPath = $location.path();
+    if (locationPath.indexOf(section) != -1) {
+      return 'active';
+    } else if (section == 'blog') {
+      if (locationPath.indexOf('topic') != -1 || locationPath == '/'  ) {
+        return 'active';
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+
+}
+
 
 function postsController($scope,$routeParams,$http,$location,postService) {
 
@@ -11,7 +35,7 @@ function postsController($scope,$routeParams,$http,$location,postService) {
   }
 
   $scope.bootstrapAffix = function () {
-    //makes navigation sticky if screen is large enough (same as bootstrap min width threshold)
+    //makes navigation sticky if screen is large enough (same as bootstrap threshold)
     if (windowWidth > 767) {
       $('#topBar').affix({offset:160});
       $('#sideNav').affix({offset:160});
