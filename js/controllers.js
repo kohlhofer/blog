@@ -30,6 +30,46 @@ function postsController($scope,$routeParams,$http,$location,postService) {
 
   var windowWidth = $(window).width();
 
+  $scope.topics = {
+    "worldview":{
+      sortOrder:2,
+      label:"World View",
+      color:"#39E",
+      description:""
+    },
+    "work":{
+      sortOrder:3,
+      label:"Working & Learning",
+      color:"#39E",
+      description:""
+    },
+    "inspiration":{
+      sortOrder:4,
+      label:"Inspiration",
+      color:"#39E",
+      description:""
+    },
+    "humour":{
+      sortOrder:5,
+      label:"The Funnies",
+      color:"#39E",
+      description:"That which amuses me."
+    },
+    "remarkable":{
+      sortOrder:1,
+      label:"Remarkable Things",
+      color:"#39E",
+      description:"That which amuses me."
+    },
+    "other":{
+      sortOrder:6,
+      label:"The Rest",
+      color:"#39E",
+      description:"That which does not fit in."
+    }
+  };
+
+
   $scope.goBack = function () {
     window.history.back()
   }
@@ -99,7 +139,7 @@ function postsController($scope,$routeParams,$http,$location,postService) {
 
 
 
-  $scope.randomColor = function () {
+  $scope.selectColor = function (id) {
       // colors
       var colors = [
         '#5E412F',
@@ -109,15 +149,22 @@ function postsController($scope,$routeParams,$http,$location,postService) {
         '#F0A830',
         '#C7E0D0',
       ];
-      return colors[Math.floor(Math.random()*colors.length)];
+
+      if (id == 'random') {
+        return colors[Math.floor(Math.random()*colors.length)];
+      } else {
+        return colors[id];
+      }
   }
   
  
   
   if ($routeParams.currentTopic) {
     $scope.currentTopic = $routeParams.currentTopic;
+    $scope.searchLabel = 'Search in ' + $scope.topics[$scope.currentTopic].label;
   } else {
     $scope.currentTopic = "";
+    $scope.searchLabel = 'Search ...';
   }
 
   $scope.selectTopic = function (topic) {
@@ -135,39 +182,6 @@ function postsController($scope,$routeParams,$http,$location,postService) {
   $scope.openPermanentUrl = function (id) {
     $location.url('post/'+id);
   }
-
-  $scope.topics = {
-    "worldview":{
-      sortOrder:2,
-      label:"World View",
-      description:""
-    },
-    "work":{
-      sortOrder:3,
-      label:"Working & Learning",
-      description:""
-    },
-    "inspiration":{
-      sortOrder:4,
-      label:"Inspiration",
-      description:""
-    },
-    "humour":{
-      sortOrder:5,
-      label:"The Funnies",
-      description:"That which amuses me."
-    },
-    "remarkable":{
-      sortOrder:1,
-      label:"Remarkable Things",
-      description:"That which amuses me."
-    },
-    "other":{
-      sortOrder:6,
-      label:"The Rest",
-      description:"That which does not fit in."
-    }
-  };
 
   $scope.postCount = function (topic) {
     if (!topic) {

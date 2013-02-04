@@ -2,6 +2,7 @@
 @import "bootstrap.min.css";
 @import "bootstrap-responsive.min.css";
 
+@topBar: #F80;
 @linksColor: #39E;
 @linksHoverColor: #06D;
 
@@ -23,7 +24,7 @@ a {
 }
 
 #brandHeader {
-  background-color:@linksColor;
+  background-color:@topBar;
   .appName {
     height:200px;
     line-height: 100px;
@@ -32,16 +33,17 @@ a {
     font-size: 180px;
     text-indent: -70px;
     font-family: 'Libre Baskerville', serif;
+    color:rgba(0,0,0,0.7);
   }
 }
 
 ul {
   &.postList {
-    margin:30px 0;
+    margin:40px 0;
     > li {
       margin-bottom: 0px;
       .post {
-        margin:0px;
+        margin:0px 10px;
       }
       &.even {
       }
@@ -54,10 +56,22 @@ ul {
   }
 }
 
+
+markdown, .sheet {
+  display: block;
+  padding:1em;
+  margin:40px 10px;
+  .box-shadow(0px 0px 2px rgba(0,0,0,0.3));
+  .rounded(@radius: 3px);
+  background-color: #FFF;
+}
+
+
 .post {
+  display: block;
   text-align: center;
   padding:1em;
-  margin:30px 0;
+  margin:40px 10px;
   .box-shadow(0px 0px 2px rgba(0,0,0,0.3));
   .rounded(@radius: 3px);
   background-color: #FFF;
@@ -111,25 +125,32 @@ ul {
 }
 
 #topics {
-  margin: 30px 0 20px 0;
-  border-bottom:1px solid #DDD;
+  margin: 40px 0 20px 0;
+  //border-bottom:1px solid #DDD;
   li {
-    border-top: 1px solid #DDD;
+    //border-top: 1px solid #DDD;
     a {
       display: block;
-      padding:5px 0px;
+      padding:5px 10px;
       font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      .rounded(@radius: 3px);
       span {
         float:right;
         font-weight:normal;
         font-family: 'Lato', sans-serif;
-        color:#999;
+        color:#AAA;
         font-size: 0.8em;
+      }
+      &:hover {
+        background-color: rgba(255,255,255,0.5);
+        color:@linksColor;
       }
     }
     &.active {
       a {
         font-weight: bold;
+        background-color: rgba(255,255,255,0.5);        
       }
     }
   }
@@ -137,16 +158,15 @@ ul {
 
 
 #topBar {
-  background-color:@linksColor;
+  background-color:@topBar;
   color:#666;
   width:100%;
   margin-top: -40px;
   text-align: left;
-  .box-shadow(0px 1px 1px rgba(0,0,0,0.5));
   &.affix {
     top:0px;
     margin-top: 0px;
-   
+    .box-shadow(0px 1px 1px rgba(0,0,0,0.5));
   }
   ul {
     margin:0 auto;
@@ -155,6 +175,7 @@ ul {
       display: inline-block;
       margin-right: 15px;
       line-height:40px;
+      font-size: 1.1em;
       font-family: 'Montserrat', sans-serif;
       color:rgba(255,255,200,1);
       a {
