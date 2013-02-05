@@ -1,0 +1,9 @@
+This article about "data-ism" for lack of a better word is a bit all over the place but covers many interesting bits of data like this one:
+
+> ... data can illuminate patterns of behavior we haven’t yet noticed. For example, I’ve always assumed that people who frequently use words like “I,” “me,” and “mine” are probably more egotistical than people who don’t. But as James Pennebaker of the University of Texas notes in his book, “The Secret Life of Pronouns,” when people are feeling confident, they are focused on the task at hand, not on themselves. High status, confident people use fewer “I” words, not more.
+
+David Brooks in [The Philosophy of Data][1]
+
+
+
+[1]:http://www.nytimes.com/2013/02/05/opinion/brooks-the-philosophy-of-data.html?ref=opinion
