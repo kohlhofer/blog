@@ -7,6 +7,27 @@ function staticController($scope,$routeParams,$location) {
 
 function navigationController($scope,$location) {
 
+
+
+  $scope.randomPattern = function () {
+
+    var patterns = [
+        'chruch.png',
+        'cream_dust.png',
+        'diagonal_striped_brick.png',
+        'diamond_upholstery.png',
+        'foggy_birds.png',
+        'norwegian_rose.png',
+        'pinstripe.png',
+        'shattered.png',
+        'subtle_stripes.png',
+        'whitediamond.png'
+      ];
+
+    $('body').css('background-image', 'url(../img/patterns/' + patterns[Math.floor(Math.random()*patterns.length)] + ')');
+  }
+
+
   $scope.currentSection = function (section) {
     var locationPath = $location.path();
     if (locationPath.indexOf(section) != -1) {
@@ -21,6 +42,11 @@ function navigationController($scope,$location) {
       return false;
     }
   }
+
+
+  $scope.randomPattern();
+
+
 
 
 }
@@ -174,7 +200,6 @@ function postsController($scope,$routeParams,$http,$location,postService) {
     } else {
       $location.url('/');
     }
-    
   }
 
 
