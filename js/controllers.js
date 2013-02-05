@@ -24,7 +24,7 @@ function navigationController($scope,$location) {
         'whitediamond.png'
       ];
 
-    $('body').css('background-image', 'url(../img/patterns/' + patterns[Math.floor(Math.random()*patterns.length)] + ')');
+    $('body').css('background-image', 'url(img/patterns/' + patterns[Math.floor(Math.random()*patterns.length)] + ')');
   }
 
 
